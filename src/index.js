@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+// import './index.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import CourseListComponent from "./components/CourseListComponent";
 
 /*
 '<App /> ' is an example of component-based-programming -- see App.js for implementation.
@@ -11,12 +13,11 @@ import * as serviceWorker from './serviceWorker';
  */
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-    <App />
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root') // JZ :: goes back to index.html to inject dynamically programming (javascript) into the html file
+    <div className="container">
+        <CourseListComponent instructor = "Jose" term="Fall 2020"/>,
+    </div>,
+    document.getElementById('root') // JZ :: goes back to index.html to inject dynamically programming (javascript) into the html file
+
 );
 
 // If you want your app to work offline and load faster, you can change
