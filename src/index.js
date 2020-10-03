@@ -14,7 +14,9 @@ import CourseListComponent from "./components/CourseListComponent";
 
 ReactDOM.render(
     <div className="container">
-        <CourseListComponent instructor = "Jose" term="Fall 2020"/>,
+        {/*// Instantiating the object 'CourseList components' passing in the parameters -- here the */}
+        {/*// terminology is 'properties' or 'props'. */}
+        <CourseListComponent instructor = "Jenny" term="Fall 2020"/>,
     </div>,
     document.getElementById('root') // JZ :: goes back to index.html to inject dynamically programming (javascript) into the html file
 
