@@ -2,9 +2,15 @@ import React from "react"; // React is a web framework for UI components.
 import CourseRowComponent from "./CourseRowComponent";
 import {findAllCourses, updateCourse, deleteCourseService, createCourse} from "../services/CourseService";
 import './StyleCourseListComponent.css';
+import CourseCard from "./CourseCard";
+import { Container, Row, Col } from "reactstrap";
+
+
+import "font-awesome/css/font-awesome.css"
+
 
 // Declare the class which extends React.Component
-class CourseListComponent extends React.Component {
+class CourseGrid extends React.Component {
 
     // We declare what objects we want to pay attention to when that object's state changes.
     // I.e. when the state of the 'course' array changes (when we add or delete courses in the
@@ -35,7 +41,7 @@ class CourseListComponent extends React.Component {
             .then(courses => { // then once we receive the JSON object -- store it in the variable 'courses' then manipulate it '=>'
                 this.setState({ // we're going to manipulate the JSON object 'course' by setting the state's attribute 'courses' (in purple)
                                   courses: courses // to the JSON object 'courses' (in grey)
-                })
+                              })
             })
     }
 
@@ -94,38 +100,66 @@ class CourseListComponent extends React.Component {
     render() {
         console.log("render()");
         return (
-            <div>
-            {/*//     <div className={"row"}>*/}
-            {/*//         <div>*/}
-            {/*//             <i id={"wbdv-hamburger"} className="fa fa-bars fa-2x" aria-hidden="true"></i>*/}
-            {/*//         </div>*/}
-            {/*//         /!* We we receiving parameters as 'properties' or 'props' when the class gets called *!/*/}
-            {/*//         /!* in index.js . *!/*/}
-            {/*//         <h1>Course List (For {this.props.instructor}) {this.props.term}</h1>*/}
-            {/*//     </div>*/}
 
-                <table className="table">
-                    <thead>
-                    <tr>
-                        <th > Title</th>
-                        <th> Owned by </th>
+            <div className={"container "}>
 
-                        <th> Date Last Modified</th>
-                        <th>
-                            <button
-                                className="btn btn-danger "
-                                onClick={() => <helloWorld/>}>
-                                HelloWorld
-                            </button>
-                            <a href="#" >
-                                <i className="fa fa-th icon-spacing wbdv-button-spacing" aria-hidden="true"></i>
-                            </a>
-                            <a href="#">
-                                <i className="fas fa-sort-alpha-down wbdv-button-spacing"></i>
-                            </a>
-                        </th>
-                    </tr>
-                    </thead>
+                <span  className={"row"}>
+                    <div className={"wbdv-header-doc"}> Recent Documents </div>
+                    <div className={"wbdv-button-spacing wbdv-header-owner"}> Owned By Me </div>
+                    <div className={"wbdv-header-buttons"}>
+                        <a href={"#"} className={"wbdv-grid-heading"}>
+                            <i className="fas fa-sort-alpha-down "></i>
+                        </a>
+                        <a href={"#"} className={"wbdv-grid-heading"} >
+                            <i className="fas fa-list-ul "></i>
+                        </a>
+
+                        <a href={"#"} className={"wbdv-grid-heading"}  >
+                            <i className="fas fa-folder "></i>
+                        </a>
+                    </div>
+                </span>
+
+
+
+
+
+                {/*//     <div className={"row"}>*/}
+                {/*//         <div>*/}
+                {/*//             <i id={"wbdv-hamburger"} className="fa fa-bars fa-2x" aria-hidden="true"></i>*/}
+                {/*//         </div>*/}
+                {/*//         /!* We we receiving parameters as 'properties' or 'props' when the class gets called *!/*/}
+                {/*//         /!* in index.js . *!/*/}
+                {/*//         <h1>Course List (For {this.props.instructor}) {this.props.term}</h1>*/}
+                {/*//     </div>*/}
+
+                {/*<table className="table">*/}
+                {/*    <thead>*/}
+                {/*    <tr>*/}
+                {/*        <th > Title</th>*/}
+                {/*        <th> Owned by </th>*/}
+
+                {/*        <th> Date Last Modified</th>*/}
+                {/*        <th>*/}
+                {/*            <button*/}
+                {/*                className="btn btn-danger "*/}
+                {/*                onClick={() => <helloWorld/>}>*/}
+                {/*                HelloWorld*/}
+                {/*            </button>*/}
+                {/*            <a href="#" >*/}
+                {/*                <i className="fa fa-th icon-spacing wbdv-button-spacing" aria-hidden="true"></i>*/}
+                {/*            </a>*/}
+                {/*            <a href="#">*/}
+                {/*                <i className="fas fa-sort-alpha-down wbdv-button-spacing"></i>*/}
+                {/*            </a>*/}
+                {/*        </th>*/}
+                {/*    </tr>*/}
+                {/*    </thead>*/}
+
+
+                {/*<div className={"wbdv-card-deck"}>*/}
+                <Container>
+                    <Row>
 
                     {
                         // 1) this.state.course -- means we're applying state to the array 'courses' so
@@ -145,22 +179,52 @@ class CourseListComponent extends React.Component {
                         // setState and request the browser to rerender the an 'courses' array
                         // without the deleted course.
                         this.state.courses.map(course =>
-                                                   <CourseRowComponent
+                                                   <Col xs="4">
+                                                   <CourseCard
                                                        courseBeingEdited={this.state.courseBeingEdited}
                                                        editCourse={this.editCourse}
                                                        deleteCourse={this.deleteCourse}
                                                        course={course}/>
+                                                   </Col>
+
                         )
                     }
-                </table>
-                <button
+                    </Row>
+                </Container>
+
+                {/*</div>*/}
+
+
+
+                {/*</table>*/}
+
+
+
+
+
+
+
+
+                {/*<button*/}
+                {/*    onClick={this.addCourse} // when the 'Add Course' button is clicked call the 'addCourse' function*/}
+                {/*    className="btn btn-success">*/}
+                {/*    Add Course*/}
+                {/*</button>*/}
+
+
+                {/* Sticky bottom plus button */}
+                <a href="#"
                     onClick={this.addCourse} // when the 'Add Course' button is clicked call the 'addCourse' function
-                    className="btn btn-success">
-                    Add Course
-                </button>
+                    >
+                    <i className="fa fa-plus-circle pull-right fa-3x wbdv-add-course-button wbdv-sticky-add-course-button "
+                       aria-hidden="true"></i>
+                    {/*Add Course*/}
+                </a>
+
+
             </div>
         )
     }
 }
 
-export default CourseListComponent
+export default CourseGrid

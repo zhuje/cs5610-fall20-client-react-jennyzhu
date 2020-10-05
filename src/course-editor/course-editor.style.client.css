@@ -1,0 +1,217 @@
+
+/**************** Header Formatting ****************/
+.wbdv-editor-heading{
+    color: white;
+    background-color: #343a40;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    position: fixed;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.wbdv-margins-left-right-auto{
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+
+
+.wbdv-pill-color-spacing{
+    background-color: grey;
+    color: white;
+    margin: 5px;
+}
+
+.wbdv-module-nudge{
+    margin-left:100px;
+}
+
+.wdbv-plus-nudge{
+    margin-top: 6px;
+}
+
+
+.nav-link {
+    display: block;
+    padding: .5rem 1.5rem;
+}
+
+.nav-pills .nav-link {
+    border-radius: .25rem;
+    margin: 10px;
+}
+
+/* Header -- Pill Nav  */
+a {
+    color: #f8f9fa;
+    text-decoration: none;
+    background-color: #343a40;
+}
+
+/************** Sidebar -- Module Formatting *****************/
+
+body {
+    padding-top: 85px;
+    background-color: lightgrey;
+}
+
+.wbdv-module-list-item-style {
+    border-radius: .25rem;
+    /*margin-top: 12px;*/
+    margin-bottom: 12px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: #343a40;
+    color: white;
+}
+
+.wbdv-module-list-item-style-transparent {
+    border-radius: .25rem;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: transparent;
+    color: white;
+}
+
+
+/********************** Content -- Widget Styling ******************/
+.wbdv-widget-heading-button{
+    margin-right: 2px;
+}
+
+.wbdv-widget-input{
+    margin-top: 17px;
+    margin-bottom: 17px;
+}
+
+.wbdv-widget-save-preview{
+    margin-top: -20px;
+    margin-right: 0px;
+}
+
+.wdbv-widget-nudge-right{
+    padding-right: 110px;
+    padding-left: 50px;
+    background-color: whitesmoke;
+    padding: 35px;
+    bottom:0;
+}
+
+.wbdv-widget-save-button{
+    margin-right: 47px;
+}
+
+
+/* Widget Styling : Toggle Button */
+/* Source for toggle button: https://www.w3schools.com/howto/howto_css_switch.asp */
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
+
+/*************** Adjust height of components below header ********************/
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+/* Allow components below header to be height of 100% --
+i.e. fills the rest of the space to the bottom. */
+.wbdv-below-header{
+    height: 100%;
+}
+
+
+.wbdv-modules-sidebar {
+    background-color: #1f2429;
+    padding: 19px;
+}
+
+
+
+/***************** Sticky Add Button (bottom-right) ***************/
+.wbdv-add-course-button {
+    position: absolute;
+    color: red;
+}
+
+
+.wbdv-sticky-add-course-button {
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    color: red;
+}
+
+
+
+
+

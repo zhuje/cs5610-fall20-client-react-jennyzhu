@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          rel="stylesheet"/>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+          rel="stylesheet"/>
+    <link href="../css/styles.css" rel="stylesheet"/>
+    <link href="course-editor.style.client.css" rel="stylesheet"/>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <div class="container ">
+        <h5 class= "wbdv-editor-heading ">
+            <div class="row">
+                <div class=" col-xs-3 wbdv-margins-left-right-auto">
+                    <h4 class ="wbdv-course-title">
+                        <a href= "#">
+                            <i class="fa fa-times wbdv-course-editor wbdv-close" aria-hidden="true"></i>
+                        </a>
+                        &nbsp;
+                        &nbsp;
+                        CS5610 - WebDev
+                    </h4>
+                </div>
+                <div class="col-xs-5 d-none d-lg-inline d-print-inline wbdv-margins-left-right-auto ">
+                    <ul class="nav nav-pills wbdv-lesson-tabs">
+                        <li class="nav-item"><a class="nav-link" href="#"> Build </a></li>
+                        <li class="nav-item"><a class="nav-link active" href="#"> Pages </a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"> Theme </a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"> Store </a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"> Apps </a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"> Settings </a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-1 wbdv-margins-left-right-auto">
+                    <a href="#" class="wbdv-lesson-add-btn">
+                        <i class="fa fa-plus fa-2x pull-right wdbv-plus-nudge" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </h5>
+    </div>
+
+
+
+    <!-- SIDEBAR -- Navigation Modules (right-hand side)   -->
+    <div class="row wbdv-below-header">
+        <div class=" col-4 wbdv-modules-sidebar "  >
+            <ul class="list-group wbdv-module-list">
+                <li class = "wbdv-module-item list-group-item wbdv-module-list-item-style" >
+                            <a href="#" class= "wbdv-module-item-title wbdv-module-list-item-style-transparent">
+                                Module 1 - jQuery
+                            </a>
+                            <a href="#" class="wbdv-module-item-delete-btn">
+                                <i class="fa fa-times pull-right"></i>
+                            </a>
+                </li>
+                <li class = "wbdv-module-item list-group-item wbdv-module-list-item-style" >
+                    <a href="#" class= "wbdv-module-item-title wbdv-module-list-item-style-transparent">
+                        Module 2 - React
+                    </a>
+                    <a href="#" class="wbdv-module-item-delete-btn">
+                        <i class="fa fa-times pull-right"></i>
+                    </a>
+                </li>
+                <li class = "wbdv-module-item list-group-item wbdv-module-list-item-style" >
+                    <a href="#" class= "wbdv-module-item-title wbdv-module-list-item-style-transparent">
+                        Module 3 - Redux
+                    </a>
+                    <a href="#" class="wbdv-module-item-delete-btn">
+                        <i class="fa fa-times pull-right"></i>
+                    </a>
+                </li>
+                <li class = "wbdv-module-item list-group-item wbdv-module-list-item-style" >
+                    <a href="#" class= "wbdv-module-item-title wbdv-module-list-item-style-transparent">
+                        Module 4 - Native
+                    </a>
+                    <a href="#" class="wbdv-module-item-delete-btn">
+                        <i class="fa fa-times pull-right"></i>
+                    </a>
+                </li>
+                <li class = "wbdv-module-item list-group-item wbdv-module-list-item-style" >
+                    <a href="#" class= "wbdv-module-item-title wbdv-module-list-item-style-transparent">
+                        Module 5 - Angular
+                    </a>
+                    <a href="#" class="wbdv-module-item-delete-btn">
+                        <i class="fa fa-times pull-right"></i>
+                    </a>
+                </li>
+                <li class = "wbdv-module-item list-group-item wbdv-module-list-item-style" >
+                    <a href="#" class= "wbdv-module-item-title wbdv-module-list-item-style-transparent">
+                        Module 6 - Node
+                    </a>
+                    <a href="#" class="wbdv-module-item-delete-btn">
+                        <i class="fa fa-times pull-right"></i>
+                    </a>
+                </li>
+                <li class = "wbdv-module-item list-group-item wbdv-module-list-item-style" >
+                    <a href="#" class= "wbdv-module-item-title wbdv-module-list-item-style-transparent">
+                        Module 7 - Mongo
+                    </a>
+                    <a href="#" class="wbdv-module-item-delete-btn">
+                        <i class="fa fa-times pull-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#"  class="list-group-item wbdv-module-list-item-style-transparent wbdv-module-tem-add-btn"><i
+                            class="fa fa-plus pull-right"></i></a>
+                </li>
+            </ul>
+        </div>
+
+
+
+        <!-- CONTENT -- Widgets (left-hand-side)-->
+        <div class="col-8 wbdv-widgets wdbv-widget-nudge-right ">
+            <div>
+                <div>
+                    <!-- Nav Pills -->
+                    <ul class="nav nav-pills wbdv-topic-pill-list">
+                        <li class="nav-item wbdv-topic-pill"><a class="nav-link " href="#"> Topic 1 </a></li>
+                        <li class="nav-item wbdv-topic-pill"><a class="nav-link active" href="#"> Topic 2 </a></li>
+                        <li class="nav-item wbdv-topic-pill"><a class="nav-link" href="#"> Topic 3 </a></li>
+                        <li class="nav-item wbdv-topic-pill"><a class="nav-link" href="#"> Topic 4 </a></li>
+                        <li class="nav-item wbdv-topic-pill"><a class="nav-link wbdv-topic-add-btn" href="#"> + </a></li>
+                    </ul>
+                </div>
+                <br/>
+                <div class="row  wbdv-widget-save-preview pull-right">
+                    <a href="#" class="btn btn-success wbdv-widget-save-button">
+                        Save
+                    </a>
+                    <div class="wbdb-preview-switch ">
+                        <label for ="preview-switch" >
+                            <h5> Preview </h5>
+                        </label>
+                        <label class="switch">
+                            <input type="checkbox" id="preview-switch">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <br/>
+                <br/>
+
+                <!-- Widget-Editor: Heading -->
+                <div class="wbdv-light-gray-border">
+                    <h3>
+                        Heading Widget
+                        <span class="pull-right wbdv-widget-heading-button">
+                            <a href="#" class="btn btn-warning">
+                                <i class="fa fa-arrow-up"></i>
+                            </a>
+                            <a href="#" class="btn btn-warning">
+                                <i class="fa fa-arrow-down"></i>
+                            </a>
+
+                                <select>
+                                    <option>Heading</option>
+                                    <option>YouTube</option>
+                                    <option>Slides</option>
+                                    <option>Image</option>
+                                    <option>List</option>
+                                </select>
+
+                            <a href="#" class="btn btn-danger">
+                                <i class="fa fa-trash"></i>
+                            </a>
+                        </span>
+                    </h3>
+
+                    <!-- Widget Editor: Input fields -->
+                    <input class="form-control wbdv-widget-input" placeholder="Heading Text"/>
+                    <select class="form-control wbdv-widget-input">
+                        <option>Heading 1</option>
+                        <option>Heading 2</option>
+                        <option>Heading 3</option>
+                        <option>Heading 4</option>
+                        <option>Heading 5</option>
+                        <option>Heading 6</option>
+                    </select>
+                    <input class="form-control wbdv-widget-input" placeholder="Widget Name"/>
+                    <h3> Preview </h3>
+                    <h2> Heading Text </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="wbdv-module-item-add-btn" >
+        <i class="fa fa-plus-circle pull-right fa-3x wbdv-add-course-button wbdv-sticky-add-course-button"
+           aria-hidden="true"></i>
+    </a>
+</div>
+
+
+
+
+
+
+
+</body>
+</html>
