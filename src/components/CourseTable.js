@@ -2,9 +2,12 @@ import React from "react"; // React is a web framework for UI components.
 import CourseRowComponent from "./CourseRowComponent";
 import {findAllCourses, updateCourse, deleteCourseService, createCourse} from "../services/CourseService";
 import './StyleCourseListComponent.css';
+import {BrowserRouter as Router, Link, Route} from 'react-router-dom'
+import CourseGrid from "./CourseGrid";
+
 
 // Declare the class which extends React.Component
-class CourseListComponent extends React.Component {
+class CourseTable extends React.Component {
 
     // We declare what objects we want to pay attention to when that object's state changes.
     // I.e. when the state of the 'course' array changes (when we add or delete courses in the
@@ -112,11 +115,7 @@ class CourseListComponent extends React.Component {
 
                         <th> Date Last Modified</th>
                         <th>
-                            <button
-                                className="btn btn-danger "
-                                onClick={() => <helloWorld/>}>
-                                HelloWorld
-                            </button>
+
                             <a href="#" >
                                 <i className="fa fa-th icon-spacing wbdv-button-spacing" aria-hidden="true"></i>
                             </a>
@@ -144,7 +143,7 @@ class CourseListComponent extends React.Component {
                         // 'this.deleteCourse' which is a reference to our function that will
                         // setState and request the browser to rerender the an 'courses' array
                         // without the deleted course.
-                        this.state.courses.map(course =>
+                        this.state.courses.map( (course,key) =>
                                                    <CourseRowComponent
                                                        courseBeingEdited={this.state.courseBeingEdited}
                                                        editCourse={this.editCourse}
@@ -163,4 +162,4 @@ class CourseListComponent extends React.Component {
     }
 }
 
-export default CourseListComponent
+export default CourseTable
