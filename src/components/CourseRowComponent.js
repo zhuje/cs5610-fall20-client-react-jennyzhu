@@ -126,7 +126,7 @@ export default class CourseRowComponent extends React.Component {
 
     render() {
         return(
-            <tr className={"wbdv-course-row"}>
+            <tr className={" wbdv-course-row"}>
                 <td>
                     {
                         this.state.editing === true &&
@@ -142,8 +142,8 @@ export default class CourseRowComponent extends React.Component {
                         </Link>
                     }
                 </td>
-                <td className={".d-sm-none .d-md-block"}> {this.props.course.owner} </td>
-                <td classNAme={".d-sm-none .d-md-block"}> {this.props.course.modified} </td>
+                <td className={"d-none d-sm-table-cell"}> {this.props.course.owner} </td>
+                <td className={"d-none d-sm-table-cell"}> {this.props.course.modified} </td>
                 <td>
                     <button
                         onClick={() => this.props.deleteCourse(this.props.course)}

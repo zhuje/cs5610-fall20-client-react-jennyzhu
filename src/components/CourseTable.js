@@ -113,10 +113,10 @@ class CourseTable extends React.Component {
                 <table className="table">
                     <thead>
                     <tr>
-                        <th > Title</th>
-                        <th> Owned by </th>
+                        <th> Title</th>
+                        <th className={"d-none d-sm-table-cell"}> Owned by </th>
 
-                        <th> Date Last Modified</th>
+                        <th className={"d-none d-sm-table-cell"}> Date Last Modified</th>
                         <th>
 
                             <Link to={`/grid`}>
