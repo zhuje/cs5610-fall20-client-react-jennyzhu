@@ -1,16 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import './index.css';
 import "bootstrap/dist/css/bootstrap.min.css";
-import App from './App';
 import * as serviceWorker from './serviceWorker';
-import CourseTable from "./components/CourseTable";
-import CourseGrid from "./components/CourseGrid";
 import './components/StyleCourseListComponent.css';
-import {BrowserRouter as Router, Link, Route} from 'react-router-dom'
-import CourseManager from "./container/CourseManager";
-import ModuleList from "./components/ModuleList";
-import CourseEditor from "./components/CourseEditor";
 import WhiteBoard from "./container/WhiteBoard";
 
 /*
@@ -19,47 +11,7 @@ import WhiteBoard from "./container/WhiteBoard";
  instead of hard coding it over and over again. We can only render on container here.
  */
 ReactDOM.render(
-
-    <div className={"container wbdv-container"}>
-        {/*<div>*/}
-        {/*    <div className={"row"}>*/}
-        {/*        <div className={"wbdv-header-title"}>*/}
-        {/*            <i id={"wbdv-hamburger"} className="fa fa-bars fa-2x" aria-hidden="true"></i>*/}
-        {/*        </div>*/}
-        {/*        /!* We we receiving parameters as 'properties' or 'props' when the class gets called *!/*/}
-        {/*        /!* in index.js . *!/*/}
-        {/*        <h1> Course Manager </h1>*/}
-        {/*    </div>*/}
-        {/*</div>*/}
-        {/*// Instantiating the object 'CourseList components' passing in the parameters -- here the */}
-        {/*// terminology is 'properties' or 'props'. */}
-        {/*<CourseTable instructor = "Jenny" term="Fall 2020"/>*/}
-        {/*<CourseEditor/>*/}
-
-        <WhiteBoard/>
-
-        {/*// <Router>*/}
-        {/*//*/}
-        {/*//     /!* 1. Introduction to Link and Route *!/*/}
-        {/*//     <div>*/}
-        {/*//         <Link to = "/hello">Course Manager</Link>*/}
-        {/*//         <Route path='/hello' component={CourseTable}/>*/}
-        {/*//     </div>*/}
-        {/*//     <div>*/}
-        {/*//         <Link to="/page1">Page 1</Link>*/}
-        {/*//         <Route path='/page1' component={CourseGrid}/>*/}
-        {/*//     </div>*/}
-        {/*//     /!*<div>*!/*/}
-        {/*//     /!*    <Link to="/page2">Page 2</Link>*!/*/}
-        {/*//     /!*    <Route path='/page2' component={}/>*!/*/}
-        {/*//     /!*</div>*!/*/}
-        {/*// </Router>,*/}
-
-
-    </div>,
-
-    // <CourseManager/>,
-    // <CourseGrid/>,
+        <WhiteBoard/>,
     document.getElementById('root') // JZ :: goes back to index.html to inject dynamically programming (javascript) into the html file
 
 );

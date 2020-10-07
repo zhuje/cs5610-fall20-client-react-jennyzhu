@@ -1,9 +1,10 @@
 import React from "react"; // React is a web framework for UI components.
 import CourseRowComponent from "./CourseRowComponent";
-import {findAllCourses, updateCourse, deleteCourseService, createCourse} from "../services/CourseService";
+import {findAllCourses, updateCourse, deleteCourse, createCourse} from "../services/CourseService";
 import './StyleCourseListComponent.css';
 import CourseCard from "./CourseCard";
 import { Container, Row, Col } from "reactstrap";
+import {BrowserRouter as Router, Link, Route} from 'react-router-dom'
 
 
 import "font-awesome/css/font-awesome.css"
@@ -58,7 +59,7 @@ class CourseGrid extends React.Component {
      this.setState -- will then re re-render the local 'courses' array without the deleted 'course._id'
     */
     deleteCourse = (course) => {
-        deleteCourseService(course._id)
+        deleteCourse(course._id)
             .then(status => this.setState(prevState =>({
                                               courses: prevState.courses.filter(c => c._id !== course._id)
                                           })
@@ -103,6 +104,17 @@ class CourseGrid extends React.Component {
 
             <div className={"container "}>
 
+
+                    <div className={"row wbdv-courses-header "}>
+                        <div>
+                            <i id={"wbdv-hamburger"} className="fa fa-bars fa-2x" aria-hidden="true"></i>
+                        </div>
+                        {/* We we receiving parameters as 'properties' or 'props' when the class gets called */}
+                        {/* in index.js . */}
+                        <h1> Course List </h1>
+                    </div>
+
+
                 <span  className={"row"}>
                     <div className={"wbdv-header-doc"}> Recent Documents </div>
                     <div className={"wbdv-button-spacing wbdv-header-owner"}> Owned By Me </div>
@@ -110,10 +122,9 @@ class CourseGrid extends React.Component {
                         <a href={"#"} className={"wbdv-grid-heading"}>
                             <i className="fas fa-sort-alpha-down "></i>
                         </a>
-                        <a href={"#"} className={"wbdv-grid-heading"} >
+                        <Link to={`/courses`} className={"wbdv-grid-heading"} >
                             <i className="fas fa-list-ul "></i>
-                        </a>
-
+                        </Link>
                         <a href={"#"} className={"wbdv-grid-heading"}  >
                             <i className="fas fa-folder "></i>
                         </a>

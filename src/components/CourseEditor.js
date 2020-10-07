@@ -5,11 +5,12 @@ import "font-awesome/css/font-awesome.css"
 import LessonTabs from "./LessonTabs";
 import ModuleList from "./ModuleList";
 import WidgetList from "./WidgetList";
+import "./course-editor.style.client.css"
 
 export default class CourseEditor extends React.Component {
     render() {
         return (
-            <div>
+            <div className={"wbdv-course-editor-body"}>
                 {/* CourseEditor Header */}
                 <div className="container ">
                     <h5 className="wbdv-editor-heading ">
@@ -53,7 +54,7 @@ export default class CourseEditor extends React.Component {
                 </div>
 
                 {/* Side Bar and Widgets */}
-                <div className="row">
+                <div className="row wbdv-sidebar-widgets-container">
                     <div className="col-4">
                         <h2>Modules</h2>
                         <ModuleList/>

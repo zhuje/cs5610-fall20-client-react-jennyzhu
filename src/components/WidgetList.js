@@ -1,11 +1,12 @@
 import React from "react";
 import {Button} from "react-bootstrap";
+import "./course-editor.style.client.css"
 
 export default class WidgetList extends React.Component {
     render() {
         return  (
 
-            <div className="wbdv-light-gray-border overflow-auto">
+            <div className="wbdv-light-gray-border overflow-auto wbdv-widget-container">
 
                 <div className="row  wbdv-widget-save-preview ">
                     <Button className="btn btn-success wbdv-widget-save-button">
@@ -31,14 +32,14 @@ export default class WidgetList extends React.Component {
                 <h3>
                     Heading Widget
                     <span className="pull-right wbdv-widget-heading-button">
-                            <a href="#" className="btn btn-warning">
+                            <a href="#" className="btn  wbdv-widget-heading-button-nudge">
                                 <i className="fa fa-arrow-up"></i>
                             </a>
-                            <a href="#" className="btn btn-warning">
+                            <a href="#" className="btn  wbdv-widget-heading-button-nudge">
                                 <i className="fa fa-arrow-down"></i>
                             </a>
 
-                                <select>
+                                <select className={"wbdv-widget-heading-button-nudge"}>
                                     <option>Heading</option>
                                     <option>YouTube</option>
                                     <option>Slides</option>
@@ -46,7 +47,7 @@ export default class WidgetList extends React.Component {
                                     <option>List</option>
                                 </select>
 
-                            <a href="#" className="btn btn-danger">
+                            <a href="#" className="btn  wbdv-widget-heading-button-nudge">
                                 <i className="fa fa-trash"></i>
                             </a>
                         </span>

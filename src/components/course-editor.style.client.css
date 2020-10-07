@@ -3,10 +3,10 @@
 .wbdv-editor-heading{
     color: white;
     background-color: #343a40;
-    top: 0px;
+    top: 30px;
     left: 0px;
     right: 0px;
-    position: fixed;
+    position: absolute;
     padding-top: 20px;
     padding-bottom: 20px;
 }
@@ -45,8 +45,13 @@
     margin: 10px;
 }
 
+/*Lesson Topic pills */
+.wbdv-topic-pills{
+    background-color: ghostwhite;
+}
+
 /* Header -- Pill Nav  */
-a {
+.wbdv-course-editor-body a {
     color: #f8f9fa;
     text-decoration: none;
     background-color: #343a40;
@@ -54,10 +59,10 @@ a {
 
 /************** Sidebar -- Module Formatting *****************/
 
-body {
-    padding-top: 85px;
-    background-color: lightgrey;
-}
+/*.wbdv-course-editor-body {*/
+/*    !*padding-top: 85px;*!*/
+/*    background-color: lightgrey;*/
+/*}*/
 
 .wbdv-module-list-item-style {
     border-radius: .25rem;
@@ -93,6 +98,7 @@ body {
 .wbdv-widget-save-preview{
     margin-top: -20px;
     margin-right: 0px;
+    margin-left:430px;
 }
 
 .wdbv-widget-nudge-right{
@@ -105,6 +111,15 @@ body {
 
 .wbdv-widget-save-button{
     margin-right: 47px;
+}
+
+.wbdv-widget-container{
+    padding : 28px;
+    background-color: ghostwhite;
+}
+
+.wbdv-widget-heading-button-nudge{
+    margin: 2px;
 }
 
 
@@ -193,6 +208,10 @@ i.e. fills the rest of the space to the bottom. */
 .wbdv-modules-sidebar {
     background-color: #1f2429;
     padding: 19px;
+}
+
+.wbdv-sidebar-widgets-container{
+    margin-top: 150px;
 }
 
 

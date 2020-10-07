@@ -19,11 +19,11 @@ html, body {
 }
 
 
-.wbdv-card{
+.wbdv-card:hover{
     width: 18rem;
     flex: 1;
     margin:10px;
-
+    background-color: darkseagreen;
 }
 
 .wbdv-card-deck{
@@ -92,4 +92,16 @@ html, body {
     right: 15px;
     bottom: 15px;
     color: red;
+}
+
+
+/* CourseList-Row */
+.wbdv-course-row:hover {
+        background-color: darkseagreen;
+
+}
+
+/* Courses Header */
+.wbdv-courses-header{
+    margin:10px;
 }

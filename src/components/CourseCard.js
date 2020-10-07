@@ -39,6 +39,7 @@
 import React from "react";
 import {updateCourse} from "../services/CourseService";
 import './StyleCourseListComponent.css';
+import {Link} from "react-router-dom";
 
 
 class CourseCard extends React.Component {
@@ -124,10 +125,10 @@ class CourseCard extends React.Component {
                                 }
                                 {
                                     this.state.editing === false &&
-                                    <label>
+                                    <Link to={`/edit/${this.props.course._id}`}>
                                         <i className="fas fa-file-alt wbdv-button-spacing"></i>
                                         {this.state.course.title}
-                                    </label>
+                                    </Link>
                                 }
                             </h5>
                             {/*<h5 className={"card-title"}> {this.state.course.title}  </h5>*/}

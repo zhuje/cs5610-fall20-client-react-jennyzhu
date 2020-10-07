@@ -1,9 +1,9 @@
 import React from "react"; // React is a web framework for UI components.
 import CourseRowComponent from "./CourseRowComponent";
-import {findAllCourses, updateCourse, deleteCourseService, createCourse} from "../services/CourseService";
+import {findAllCourses, updateCourse, deleteCourse, createCourse} from "../services/CourseService";
 import './StyleCourseListComponent.css';
 import {BrowserRouter as Router, Link, Route} from 'react-router-dom'
-import CourseGrid from "./CourseGrid";
+import StyleCourseListComponent from "./StyleCourseListComponent.css"
 
 
 // Declare the class which extends React.Component
@@ -55,7 +55,10 @@ class CourseTable extends React.Component {
      this.setState -- will then re re-render the local 'courses' array without the deleted 'course._id'
     */
     deleteCourse = (course) => {
-        deleteCourseService(course._id)
+        console.log("delete course");
+        console.log(course);
+        console.log(course._id);
+        deleteCourse(course._id)
             .then(status => this.setState(prevState =>({
                                               courses: prevState.courses.filter(c => c._id !== course._id)
                                           })
@@ -98,14 +101,14 @@ class CourseTable extends React.Component {
         console.log("render()");
         return (
             <div>
-            {/*//     <div className={"row"}>*/}
-            {/*//         <div>*/}
-            {/*//             <i id={"wbdv-hamburger"} className="fa fa-bars fa-2x" aria-hidden="true"></i>*/}
-            {/*//         </div>*/}
-            {/*//         /!* We we receiving parameters as 'properties' or 'props' when the class gets called *!/*/}
-            {/*//         /!* in index.js . *!/*/}
-            {/*//         <h1>Course List (For {this.props.instructor}) {this.props.term}</h1>*/}
-            {/*//     </div>*/}
+                 <div className={"row wbdv-courses-header"}>
+                     <div>
+                         <i id={"wbdv-hamburger"} className="fa fa-bars fa-2x" aria-hidden="true"></i>
+                     </div>
+                     {/* We we receiving parameters as 'properties' or 'props' when the class gets called */}
+                     {/* in index.js . */}
+                     <h1>Course List </h1>
+                 </div>
 
                 <table className="table">
                     <thead>
@@ -116,9 +119,9 @@ class CourseTable extends React.Component {
                         <th> Date Last Modified</th>
                         <th>
 
-                            <a href="#" >
+                            <Link to={`/grid`}>
                                 <i className="fa fa-th icon-spacing wbdv-button-spacing" aria-hidden="true"></i>
-                            </a>
+                            </Link>
                             <a href="#">
                                 <i className="fas fa-sort-alpha-down wbdv-button-spacing"></i>
                             </a>
@@ -143,7 +146,7 @@ class CourseTable extends React.Component {
                         // 'this.deleteCourse' which is a reference to our function that will
                         // setState and request the browser to rerender the an 'courses' array
                         // without the deleted course.
-                        this.state.courses.map( (course,key) =>
+                        this.state.courses.map(course =>
                                                    <CourseRowComponent
                                                        courseBeingEdited={this.state.courseBeingEdited}
                                                        editCourse={this.editCourse}
@@ -163,3 +166,86 @@ class CourseTable extends React.Component {
 }
 
 export default CourseTable
+
+
+// Jose's Version
+// import React from "react";
+// import CourseRowComponent from "./CourseRowComponent";
+// import {findAllCourses, updateCourse, deleteCourse, createCourse} from "../services/CourseService";
+//
+// class CourseListComponent extends React.Component {
+//
+//     state = {
+//         courses: [],
+//         courseBeingEdited: {}
+//     }
+//
+//     componentDidMount() {
+//         findAllCourses()
+//             .then(courses => {
+//                 this.setState({
+//                                   courses: courses
+//                               })
+//             })
+//     }
+//
+//     deleteCourse = (course) => {
+//         deleteCourse(course._id)
+//             .then(status => this.setState(prevState =>({
+//                                               courses: prevState.courses.filter(c => c._id !== course._id)
+//                                           })
+//             ))
+//             .catch(error => {
+//
+//             })
+//     }
+//
+//     addCourse = () => {
+//         const newCourse = {
+//             title: "New Course",
+//             owner: "me",
+//             modified: (new Date()).toDateString()
+//         }
+//
+//         createCourse(newCourse)
+//             .then(actualCourse => this.setState(prevState => ({
+//                 courses: [
+//                     ...prevState.courses, actualCourse
+//                 ]
+//             })))
+//     }
+//
+//     editCourse = (course) => {
+//         this.setState({
+//                           courseBeingEdited: course
+//                       })
+//     }
+//
+//     render() {
+//         return (
+//             <div>
+//                 <h1>Course List (For {this.props.instructor}) {this.props.term}</h1>
+//                 <table className="table">
+//                     {
+//                         this.state.courses.map(course =>
+//                                                    <CourseRowComponent
+//                                                        courseBeingEdited={this.state.courseBeingEdited}
+//                                                        editCourse={this.editCourse}
+//                                                        deleteCourse={this.deleteCourse}
+//                                                        course={course}
+//                                                    />
+//                         )
+//                     }
+//                 </table>
+//                 <button
+//                     onClick={this.addCourse}
+//                     className="btn btn-success">
+//                     Add Course
+//                 </button>
+//             </div>
+//         );
+//     }
+// }
+//
+// export default CourseListComponent
+//
