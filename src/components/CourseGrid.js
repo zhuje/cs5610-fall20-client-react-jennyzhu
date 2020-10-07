@@ -1,5 +1,5 @@
 import React from "react"; // React is a web framework for UI components.
-import CourseRowComponent from "./CourseRowComponent";
+import CourseRow from "./CourseRow";
 import {findAllCourses, updateCourse, deleteCourse, createCourse} from "../services/CourseService";
 import './StyleCourseListComponent.css';
 import CourseCard from "./CourseCard";
@@ -180,12 +180,12 @@ class CourseGrid extends React.Component {
                         // 2) .map() just means we're going to take the elements being pass in and
                         // manipulate them with some other functions
                         // Here we're applying the function to each the of the components in the
-                        // 3) <CourseRowComponent
+                        // 3) <CourseRow
                         //     courseBeingEdited={this.state.courseBeingEdited}
                         //     editCourse={this.editCourse}
                         //     deleteCourse={this.deleteCourse}
                         //     course={course}/>
-                        // Here we're telling the class 'CourseRowComponent' that you can expect a
+                        // Here we're telling the class 'CourseRow' that you can expect a
                         // property called 'deleteCourse' which will pass in a parameter called
                         // 'this.deleteCourse' which is a reference to our function that will
                         // setState and request the browser to rerender the an 'courses' array

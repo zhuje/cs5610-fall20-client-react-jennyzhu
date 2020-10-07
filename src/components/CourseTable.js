@@ -1,5 +1,5 @@
 import React from "react"; // React is a web framework for UI components.
-import CourseRowComponent from "./CourseRowComponent";
+import CourseRow from "./CourseRow";
 import {findAllCourses, updateCourse, deleteCourse, createCourse} from "../services/CourseService";
 import './StyleCourseListComponent.css';
 import {BrowserRouter as Router, Link, Route} from 'react-router-dom'
@@ -136,18 +136,18 @@ class CourseTable extends React.Component {
                         // 2) .map() just means we're going to take the elements being pass in and
                         // manipulate them with some other functions
                         // Here we're applying the function to each the of the components in the
-                        // 3) <CourseRowComponent
+                        // 3) <CourseRow
                         //     courseBeingEdited={this.state.courseBeingEdited}
                         //     editCourse={this.editCourse}
                         //     deleteCourse={this.deleteCourse}
                         //     course={course}/>
-                        // Here we're telling the class 'CourseRowComponent' that you can expect a
+                        // Here we're telling the class 'CourseRow' that you can expect a
                         // property called 'deleteCourse' which will pass in a parameter called
                         // 'this.deleteCourse' which is a reference to our function that will
                         // setState and request the browser to rerender the an 'courses' array
                         // without the deleted course.
                         this.state.courses.map(course =>
-                                                   <CourseRowComponent
+                                                   <CourseRow
                                                        courseBeingEdited={this.state.courseBeingEdited}
                                                        editCourse={this.editCourse}
                                                        deleteCourse={this.deleteCourse}
@@ -170,7 +170,7 @@ export default CourseTable
 
 // Jose's Version
 // import React from "react";
-// import CourseRowComponent from "./CourseRowComponent";
+// import CourseRow from "./CourseRow";
 // import {findAllCourses, updateCourse, deleteCourse, createCourse} from "../services/CourseService";
 //
 // class CourseListComponent extends React.Component {
@@ -228,7 +228,7 @@ export default CourseTable
 //                 <table className="table">
 //                     {
 //                         this.state.courses.map(course =>
-//                                                    <CourseRowComponent
+//                                                    <CourseRow
 //                                                        courseBeingEdited={this.state.courseBeingEdited}
 //                                                        editCourse={this.editCourse}
 //                                                        deleteCourse={this.deleteCourse}

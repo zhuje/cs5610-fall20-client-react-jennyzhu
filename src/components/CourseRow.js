@@ -6,7 +6,7 @@
 //
 //
 //
-// class CourseRowComponent extends React.Component {
+// class CourseRow extends React.Component {
 //     state = {
 //         editing: false,
 //         courseTitle: "Some Course",
@@ -83,7 +83,7 @@
 //     }
 // }
 //
-// export default CourseRowComponent
+// export default CourseRow
 
 import React from "react";
 import {Link} from "react-router-dom";
@@ -94,7 +94,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const courseBeingEdited = false
 const editCourse = () => {}
 
-export default class CourseRowComponent extends React.Component {
+export default class CourseRow extends React.Component {
     state = {
         editing: false,
         courseTitle: "Some Course",

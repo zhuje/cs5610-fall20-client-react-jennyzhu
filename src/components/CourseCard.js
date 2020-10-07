@@ -1,6 +1,6 @@
 // import React from "react";
 //
-// const CourseRowComponent = ({course, deleteCourse, editCourse, courseBeingEdited}) =>
+// const CourseRow = ({course, deleteCourse, editCourse, courseBeingEdited}) =>
 //     <tr>
 //         <td>
 //             {
@@ -33,7 +33,7 @@
 //         </td>
 //     </tr>;
 //
-// export default CourseRowComponent
+// export default CourseRow
 
 
 import React from "react";
