@@ -88,6 +88,8 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import {updateCourse} from "../services/CourseService";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const courseBeingEdited = false
 const editCourse = () => {}
@@ -140,8 +142,8 @@ export default class CourseRowComponent extends React.Component {
                         </Link>
                     }
                 </td>
-                <td>{this.props.course.owner}</td>
-                <td>{this.props.course.modified}</td>
+                <td className={".d-sm-none .d-md-block"}> {this.props.course.owner} </td>
+                <td classNAme={".d-sm-none .d-md-block"}> {this.props.course.modified} </td>
                 <td>
                     <button
                         onClick={() => this.props.deleteCourse(this.props.course)}

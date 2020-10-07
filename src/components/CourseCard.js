@@ -40,7 +40,7 @@ import React from "react";
 import {updateCourse} from "../services/CourseService";
 import './StyleCourseListComponent.css';
 import {Link} from "react-router-dom";
-
+import "./StyleCourseCard.css"
 
 class CourseCard extends React.Component {
     state = {
@@ -113,6 +113,7 @@ class CourseCard extends React.Component {
             //     </td>
             //
             //     <td>
+
                     <div className={"card wbdv-card "} >
                         <img className={"card-img-top"} src={"https://i.imgflip.com/2c4ilx.jpg"} alt={"Card image cap"}/>
                         <div className={"card-body"}>

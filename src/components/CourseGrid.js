@@ -5,6 +5,7 @@ import './StyleCourseListComponent.css';
 import CourseCard from "./CourseCard";
 import { Container, Row, Col } from "reactstrap";
 import {BrowserRouter as Router, Link, Route} from 'react-router-dom'
+import "./StyleCourseCard.css"
 
 
 import "font-awesome/css/font-awesome.css"
@@ -168,9 +169,9 @@ class CourseGrid extends React.Component {
                 {/*    </thead>*/}
 
 
-                {/*<div className={"wbdv-card-deck"}>*/}
-                <Container>
-                    <Row>
+                <Container >
+                    <Row >
+
 
                     {
                         // 1) this.state.course -- means we're applying state to the array 'courses' so
@@ -190,16 +191,23 @@ class CourseGrid extends React.Component {
                         // setState and request the browser to rerender the an 'courses' array
                         // without the deleted course.
                         this.state.courses.map(course =>
-                                                   <Col xs="4">
+                                                   // <Col xs="3">
+                                                    <div className="col-sm-6 col-md-4 col-lg-3">
                                                    <CourseCard
                                                        courseBeingEdited={this.state.courseBeingEdited}
                                                        editCourse={this.editCourse}
                                                        deleteCourse={this.deleteCourse}
                                                        course={course}/>
-                                                   </Col>
+                                                    {/*// </Col>*/}
+                                                    </div>
+
+
 
                         )
                     }
+
+
+
                     </Row>
                 </Container>
 
