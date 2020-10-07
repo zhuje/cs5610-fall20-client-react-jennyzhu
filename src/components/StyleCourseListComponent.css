@@ -20,7 +20,7 @@ html, body {
 
 
 .wbdv-card:hover{
-    width: 18rem;
+    /*width: 18rem;*/
     flex: 1;
     margin:10px;
     background-color: darkseagreen;

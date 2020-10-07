@@ -192,7 +192,7 @@ class CourseGrid extends React.Component {
                         // without the deleted course.
                         this.state.courses.map(course =>
                                                    // <Col xs="3">
-                                                    <div className="col-sm-6 col-md-4 col-lg-3">
+                                                    <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
                                                    <CourseCard
                                                        courseBeingEdited={this.state.courseBeingEdited}
                                                        editCourse={this.editCourse}
