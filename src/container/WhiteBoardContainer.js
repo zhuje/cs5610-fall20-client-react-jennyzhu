@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Link, Route, Switch} from 'react-router-dom'
+import {BrowserRouter, Link, Route, Switch} from 'react-router-dom';
 import CourseTableComponent from "../components/CourseTableComponent";
 import CourseGridComponent from "../components/CourseGridComponent";
 import {findAllCourses} from "../services/CourseService";
