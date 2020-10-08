@@ -47,7 +47,7 @@
 
 /*Lesson Topic pills */
 .wbdv-topic-pills{
-    background-color: ghostwhite;
+
 }
 .wbdv-nav-link{
     background-color: #343a40;
@@ -123,7 +123,9 @@
 
 .wbdv-widget-container{
     padding : 28px;
-    background-color: ghostwhite;
+    border-color: #343a40;
+    border-radius: 10px;
+    border-style: solid;
 }
 
 .wbdv-widget-heading-button-nudge{
