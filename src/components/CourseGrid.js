@@ -14,6 +14,10 @@ import "font-awesome/css/font-awesome.css"
 // Declare the class which extends React.Component
 class CourseGrid extends React.Component {
 
+    constructor(props) {
+        super(props)
+    }
+
     // We declare what objects we want to pay attention to when that object's state changes.
     // I.e. when the state of the 'course' array changes (when we add or delete courses in the
     // array) then we want to RE-render() the array to reflect the latest changes. This is
@@ -21,10 +25,10 @@ class CourseGrid extends React.Component {
     // or re-rendering the whole page we only re-render the objects' who's state has changed.
     // So we're updating only a small portion of page -- which save us time and the user's
     // experience isn't as laggy.
-    state = {
-        courses: [], // array of courses
-        courseBeingEdited: {}
-    };
+    // state = {
+    //     courses: [], // array of courses
+    //     courseBeingEdited: {}
+    // };
 
     /*
     Here --- componentDidCount() -- is called when the component is first called/intialized in
@@ -59,44 +63,44 @@ class CourseGrid extends React.Component {
      .then -- come back and update our local 'courses' array
      this.setState -- will then re re-render the local 'courses' array without the deleted 'course._id'
     */
-    deleteCourse = (course) => {
-        deleteCourse(course._id)
-            .then(status => this.setState(prevState =>({
-                                              courses: prevState.courses.filter(c => c._id !== course._id)
-                                          })
-            ))
-            .catch(error => {
-
-            })
-    };
-
-    addCourse = () => {
-        // creating a new table data row
-        const newCourse = {
-            title: "New Course",
-            owner: "me",
-            modified: (new Date()).toDateString() // Date returns as an object so you can't print an object -- you have to stringify it
-        };
-
-        // calling the remote server here.
-        // .THEN updating the local state variable 'courses'
-        // this.setState -- will recognize that the 'courses' have been updated and re-render the component\
-        createCourse(newCourse)
-            .then(actualCourse => this.setState(prevState => ({
-                // ...prevState.courses  -- .clone() the previous state of courses
-                // then append the new course ('actualCourse') to the list of previous courses
-                courses: [
-                    ...prevState.courses, actualCourse
-                ]
-            })))
-    };
-
-    // function calls changes the state -- to recognize that the selected course is being edited
-    editCourse = (course) => {
-        this.setState({
-                          courseBeingEdited: course
-                      })
-    };
+    // deleteCourse = (course) => {
+    //     deleteCourse(course._id)
+    //         .then(status => this.setState(prevState =>({
+    //                                           courses: prevState.courses.filter(c => c._id !== course._id)
+    //                                       })
+    //         ))
+    //         .catch(error => {
+    //
+    //         })
+    // };
+    //
+    // addCourse = () => {
+    //     // creating a new table data row
+    //     const newCourse = {
+    //         title: "New Course",
+    //         owner: "me",
+    //         modified: (new Date()).toDateString() // Date returns as an object so you can't print an object -- you have to stringify it
+    //     };
+    //
+    //     // calling the remote server here.
+    //     // .THEN updating the local state variable 'courses'
+    //     // this.setState -- will recognize that the 'courses' have been updated and re-render the component\
+    //     createCourse(newCourse)
+    //         .then(actualCourse => this.setState(prevState => ({
+    //             // ...prevState.courses  -- .clone() the previous state of courses
+    //             // then append the new course ('actualCourse') to the list of previous courses
+    //             courses: [
+    //                 ...prevState.courses, actualCourse
+    //             ]
+    //         })))
+    // };
+    //
+    // // function calls changes the state -- to recognize that the selected course is being edited
+    // editCourse = (course) => {
+    //     this.setState({
+    //                       courseBeingEdited: course
+    //                   })
+    // };
 
     // Render() is the only required function from the inherited parent React.Component
     render() {
@@ -106,19 +110,19 @@ class CourseGrid extends React.Component {
             <div className={"container "}>
 
 
-                    <div className={"row wbdv-courses-header "}>
-                        <div>
-                            <i id={"wbdv-hamburger"} className="fa fa-bars fa-2x" aria-hidden="true"></i>
-                        </div>
-                        {/* We we receiving parameters as 'properties' or 'props' when the class gets called */}
-                        {/* in index.js . */}
-                        <h1> Course List </h1>
-                    </div>
+                    {/*<div className={"row wbdv-courses-header "}>*/}
+                    {/*    <div>*/}
+                    {/*        <i id={"wbdv-hamburger"} className="fa fa-bars fa-2x" aria-hidden="true"></i>*/}
+                    {/*    </div>*/}
+                    {/*    /!* We we receiving parameters as 'properties' or 'props' when the class gets called *!/*/}
+                    {/*    /!* in index.js . *!/*/}
+                    {/*    <h1> Course Manager </h1>*/}
+                    {/*</div>*/}
 
 
                 <span  className={"row"}>
-                    <div className={"wbdv-header-doc"}> Recent Documents </div>
-                    <div className={"wbdv-button-spacing wbdv-header-owner"}> Owned By Me </div>
+                    <div className={"wbdv-header-doc d-none d-lg-table-cell"}> Recent Documents </div>
+                    <div className={"wbdv-button-spacing wbdv-header-owner d-none d-lg-table-cell"}> Owned By Me </div>
                     <div className={"wbdv-header-buttons"}>
                         <a href={"#"} className={"wbdv-grid-heading"}>
                             <i className="fas fa-sort-alpha-down "></i>
@@ -190,13 +194,13 @@ class CourseGrid extends React.Component {
                         // 'this.deleteCourse' which is a reference to our function that will
                         // setState and request the browser to rerender the an 'courses' array
                         // without the deleted course.
-                        this.state.courses.map(course =>
+                        this.props.courses.map(course =>
                                                    // <Col xs="3">
                                                     <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
                                                    <CourseCard
                                                        courseBeingEdited={this.state.courseBeingEdited}
-                                                       editCourse={this.editCourse}
-                                                       deleteCourse={this.deleteCourse}
+                                                       editCourse={this.props.editCourse}
+                                                       deleteCourse={this.props.deleteCourse}
                                                        course={course}/>
                                                     {/*// </Col>*/}
                                                     </div>
@@ -233,7 +237,7 @@ class CourseGrid extends React.Component {
 
                 {/* Sticky bottom plus button */}
                 <a href="#"
-                    onClick={this.addCourse} // when the 'Add Course' button is clicked call the 'addCourse' function
+                    onClick={this.props.addCourse} // when the 'Add Course' button is clicked call the 'addCourse' function
                     >
                     <i className="fa fa-plus-circle pull-right fa-3x wbdv-add-course-button wbdv-sticky-add-course-button "
                        aria-hidden="true"></i>

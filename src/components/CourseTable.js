@@ -9,6 +9,11 @@ import StyleCourseListComponent from "./StyleCourseListComponent.css"
 // Declare the class which extends React.Component
 class CourseTable extends React.Component {
 
+    constructor(props) {
+        super(props)
+    }
+
+
     // We declare what objects we want to pay attention to when that object's state changes.
     // I.e. when the state of the 'course' array changes (when we add or delete courses in the
     // array) then we want to RE-render() the array to reflect the latest changes. This is
@@ -16,10 +21,10 @@ class CourseTable extends React.Component {
     // or re-rendering the whole page we only re-render the objects' who's state has changed.
     // So we're updating only a small portion of page -- which save us time and the user's
     // experience isn't as laggy.
-    state = {
-        courses: [], // array of courses
-        courseBeingEdited: {}
-    };
+    // state = {
+    //     courses: [], // array of courses
+    //     courseBeingEdited: {}
+    // };
 
     /*
     Here --- componentDidCount() -- is called when the component is first called/intialized in
@@ -33,7 +38,7 @@ class CourseTable extends React.Component {
     network request.
      */
     componentDidMount() {
-        console.log("component did mount");
+        console.log("component did mountTable");
         findAllCourses() // fetches from the remote server all of the 'courses' as a JSON object 'courses' which we will then parse here
             .then(courses => { // then once we receive the JSON object -- store it in the variable 'courses' then manipulate it '=>'
                 this.setState({ // we're going to manipulate the JSON object 'course' by setting the state's attribute 'courses' (in purple)
@@ -54,61 +59,61 @@ class CourseTable extends React.Component {
      .then -- come back and update our local 'courses' array
      this.setState -- will then re re-render the local 'courses' array without the deleted 'course._id'
     */
-    deleteCourse = (course) => {
-        console.log("delete course");
-        console.log(course);
-        console.log(course._id);
-        deleteCourse(course._id)
-            .then(status => this.setState(prevState =>({
-                                              courses: prevState.courses.filter(c => c._id !== course._id)
-                                          })
-            ))
-            .catch(error => {
+    // deleteCourse = (course) => {
+    //     console.log("delete course");
+    //     console.log(course);
+    //     console.log(course._id);
+    //     deleteCourse(course._id)
+    //         .then(status => this.setState(prevState =>({
+    //                                           courses: prevState.courses.filter(c => c._id !== course._id)
+    //                                       })
+    //         ))
+    //         .catch(error => {
+    //
+    //         })
+    // };
 
-            })
-    };
+    // addCourse = () => {
+    //     // creating a new table data row
+    //     const newCourse = {
+    //         title: "New Course",
+    //         owner: "me",
+    //         modified: (new Date()).toDateString() // Date returns as an object so you can't print an object -- you have to stringify it
+    //     };
+    //
+    //     // calling the remote server here.
+    //     // .THEN updating the local state variable 'courses'
+    //     // this.setState -- will recognize that the 'courses' have been updated and re-render the component\
+    //     createCourse(newCourse)
+    //         .then(actualCourse => this.setState(prevState => ({
+    //             // ...prevState.courses  -- .clone() the previous state of courses
+    //             // then append the new course ('actualCourse') to the list of previous courses
+    //             courses: [
+    //                 ...prevState.courses, actualCourse
+    //             ]
+    //         })))
+    // };
 
-    addCourse = () => {
-        // creating a new table data row
-        const newCourse = {
-            title: "New Course",
-            owner: "me",
-            modified: (new Date()).toDateString() // Date returns as an object so you can't print an object -- you have to stringify it
-        };
-
-        // calling the remote server here.
-        // .THEN updating the local state variable 'courses'
-        // this.setState -- will recognize that the 'courses' have been updated and re-render the component\
-        createCourse(newCourse)
-            .then(actualCourse => this.setState(prevState => ({
-                // ...prevState.courses  -- .clone() the previous state of courses
-                // then append the new course ('actualCourse') to the list of previous courses
-                courses: [
-                    ...prevState.courses, actualCourse
-                ]
-            })))
-    };
-
-    // function calls changes the state -- to recognize that the selected course is being edited
-    editCourse = (course) => {
-        this.setState({
-                          courseBeingEdited: course
-                      })
-    };
+    // // function calls changes the state -- to recognize that the selected course is being edited
+    // editCourse = (course) => {
+    //     this.setState({
+    //                       courseBeingEdited: course
+    //                   })
+    // };
 
     // Render() is the only required function from the inherited parent React.Component
     render() {
         console.log("render()");
         return (
             <div>
-                 <div className={"row wbdv-courses-header"}>
-                     <div>
-                         <i id={"wbdv-hamburger"} className="fa fa-bars fa-2x" aria-hidden="true"></i>
-                     </div>
-                     {/* We we receiving parameters as 'properties' or 'props' when the class gets called */}
-                     {/* in index.js . */}
-                     <h1>Course List </h1>
-                 </div>
+                 {/*<div className={"row wbdv-courses-header"}>*/}
+                 {/*    <div>*/}
+                 {/*        <i id={"wbdv-hamburger"} className="fa fa-bars fa-2x" aria-hidden="true"></i>*/}
+                 {/*    </div>*/}
+                 {/*    /!* We we receiving parameters as 'properties' or 'props' when the class gets called *!/*/}
+                 {/*    /!* in index.js . *!/*/}
+                 {/*    <h1>Course List </h1>*/}
+                 {/*</div>*/}
 
                 <table className="table">
                     <thead>
@@ -146,17 +151,17 @@ class CourseTable extends React.Component {
                         // 'this.deleteCourse' which is a reference to our function that will
                         // setState and request the browser to rerender the an 'courses' array
                         // without the deleted course.
-                        this.state.courses.map(course =>
+                        this.props.courses.map(course =>
                                                    <CourseRow
                                                        courseBeingEdited={this.state.courseBeingEdited}
-                                                       editCourse={this.editCourse}
-                                                       deleteCourse={this.deleteCourse}
+                                                       editCourse={this.props.editCourse}
+                                                       deleteCourse={this.props.deleteCourse}
                                                        course={course}/>
                         )
                     }
                 </table>
                 <button
-                    onClick={this.addCourse} // when the 'Add Course' button is clicked call the 'addCourse' function
+                    onClick={this.props.addCourse} // when the 'Add Course' button is clicked call the 'addCourse' function
                     className="btn btn-success">
                     Add Course
                 </button>

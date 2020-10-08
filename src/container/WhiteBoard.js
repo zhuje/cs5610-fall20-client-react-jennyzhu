@@ -53,10 +53,10 @@ export default class WhiteBoard extends React.Component{
                     <Link to="/edit"> Editor </Link>
 
                     <Route path="/courses" exact>
-                        <CourseTable instructor="Jose"/>
+                        <CourseManager type={"Table"}/>
                     </Route>
                     <Route path="/grid" exact>
-                        <CourseGrid/>
+                        <CourseManager type={"Grid"}/>
                     </Route>
                     <Route
                         path="/edit/"
