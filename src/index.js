@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import "bootstrap/dist/css/bootstrap.min.css";
 import * as serviceWorker from './serviceWorker';
 import './components/StyleCourseListComponent.css';
-import WhiteBoard from "./container/WhiteBoard";
+import WhiteBoardContainer from "./container/WhiteBoardContainer";
 
 /*
 '<App /> ' is an example of component-based-programming -- see App.js for implementation.
@@ -11,7 +11,7 @@ import WhiteBoard from "./container/WhiteBoard";
  instead of hard coding it over and over again. We can only render on container here.
  */
 ReactDOM.render(
-        <WhiteBoard/>,
+        <WhiteBoardContainer/>,
     document.getElementById('root') // JZ :: goes back to index.html to inject dynamically programming (javascript) into the html file
 
 );

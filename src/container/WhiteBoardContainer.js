@@ -1,12 +1,12 @@
 import React from 'react';
 import {BrowserRouter, Link, Route, Switch} from 'react-router-dom'
-import CourseTable from "../components/CourseTable";
-import CourseGrid from "../components/CourseGrid";
+import CourseTableComponent from "../components/CourseTableComponent";
+import CourseGridComponent from "../components/CourseGridComponent";
 import {findAllCourses} from "../services/CourseService";
-import CourseManager from "./CourseManager";
-import CourseEditor from "../components/CourseEditor";
+import CourseManagerContainer from "./CourseManagerContainer";
+import CourseEditorComponent from "../components/CourseEditorComponent";
 
-export default class WhiteBoard extends React.Component{
+export default class WhiteBoardContainer extends React.Component{
 
     // state = {
     //     courses: [], // array of courses
@@ -31,15 +31,15 @@ export default class WhiteBoard extends React.Component{
             //     <Link to="/course/grid"> Grid </Link>   |
             //     <Link to="/course/edit"> Editor </Link>   |
             //     <Route path="/course/table"
-            //            render={() => <CourseManager
+            //            render={() => <CourseManagerContainer
             //                selectCourse={this.selectCourse}
             //                courses={this.courses}/>}/>
             //    <Route path="/course/grid"
-            //           render={() => <CourseGrid
+            //           render={() => <CourseGridComponent
             //               selectCourse={this.selectCourse}
             //               courses={this.courses}/>}/>
             //     <Route path="/edit"
-            //            render={() => <CourseEditor
+            //            render={() => <CourseEditorComponent
             //                selectCourse={this.selectCourse}
             //                courses={this.courses}/>}/>
             //     </div>
@@ -53,19 +53,19 @@ export default class WhiteBoard extends React.Component{
                     <Link to="/edit"> Editor </Link>
 
                     <Route path="/courses" exact>
-                        <CourseManager type={"Table"}/>
+                        <CourseManagerContainer type={"Table"}/>
                     </Route>
                     <Route path="/grid" exact>
-                        <CourseManager type={"Grid"}/>
+                        <CourseManagerContainer type={"Grid"}/>
                     </Route>
                     <Route
                         path="/edit/"
                         exact
-                        component={CourseEditor}/>
+                        component={CourseEditorComponent}/>
                     <Route
                         path="/edit/:courseId"
                         exact
-                        component={CourseEditor}/>
+                        component={CourseEditorComponent}/>
                 </div>
             </BrowserRouter>
 

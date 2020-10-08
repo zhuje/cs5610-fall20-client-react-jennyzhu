@@ -1,7 +1,7 @@
 import React from "react";
 import "./course-editor.style.client.css"
 
-export default class TopicPills extends React.Component {
+export default class TopicPillsComponent extends React.Component {
     render() {
         return(
             <ul class="nav nav-pills wbdv-topic-pills ">

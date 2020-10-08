@@ -2,7 +2,7 @@
 import React from 'react';
 // import '../.../bootstrap/.../bootstrap.css';
 
-export default class ModuleListItem extends React.Component {
+export default class ModuleListItemComponent extends React.Component {
     constructor(props){
         super(props);
     }

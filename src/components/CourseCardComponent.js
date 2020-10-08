@@ -1,6 +1,6 @@
 // import React from "react";
 //
-// const CourseRow = ({course, deleteCourse, editCourse, courseBeingEdited}) =>
+// const CourseRowComponent = ({course, deleteCourse, editCourse, courseBeingEdited}) =>
 //     <tr>
 //         <td>
 //             {
@@ -33,7 +33,7 @@
 //         </td>
 //     </tr>;
 //
-// export default CourseRow
+// export default CourseRowComponent
 
 
 import React from "react";
@@ -42,7 +42,7 @@ import './StyleCourseListComponent.css';
 import {Link} from "react-router-dom";
 import "./StyleCourseCard.css"
 
-class CourseCard extends React.Component {
+class CourseCardComponent extends React.Component {
     state = {
         editing: false,
         courseTitle: "Some Course",
@@ -189,4 +189,4 @@ class CourseCard extends React.Component {
     }
 }
 
-export default CourseCard
+export default CourseCardComponent

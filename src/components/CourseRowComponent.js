@@ -6,7 +6,7 @@
 //
 //
 //
-// class CourseRow extends React.Component {
+// class CourseRowComponent extends React.Component {
 //     state = {
 //         editing: false,
 //         courseTitle: "Some Course",
@@ -83,7 +83,7 @@
 //     }
 // }
 //
-// export default CourseRow
+// export default CourseRowComponent
 
 import React from "react";
 import {Link} from "react-router-dom";
@@ -94,7 +94,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const courseBeingEdited = false
 const editCourse = () => {}
 
-export default class CourseRow extends React.Component {
+export default class CourseRowComponent extends React.Component {
     state = {
         editing: false,
         courseTitle: "Some Course",
@@ -143,7 +143,7 @@ export default class CourseRow extends React.Component {
                     }
                 </td>
                 <td className={"d-none d-sm-table-cell"}> {this.props.course.owner} </td>
-                <td className={"d-none d-sm-table-cell"}> {this.props.course.modified} </td>
+                <td className={"d-none d-md-table-cell"}> {this.props.course.modified} </td>
                 <td>
                     <button
                         onClick={() => this.props.deleteCourse(this.props.course)}

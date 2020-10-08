@@ -1,7 +1,7 @@
 import React from "react";
-import TopicPills from "./TopicPills";
+import TopicPillsComponent from "./TopicPillsComponent";
 
-export default class LessonTabs extends React.Component {
+export default class LessonTabsComponent extends React.Component {
     render() {
         return(
             <div>
@@ -22,7 +22,7 @@ export default class LessonTabs extends React.Component {
                     </li>
                 </ul>
 
-                <TopicPills/>
+                <TopicPillsComponent/>
 
 
             </div>

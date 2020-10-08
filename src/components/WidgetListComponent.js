@@ -2,7 +2,7 @@ import React from "react";
 import {Button} from "react-bootstrap";
 import "./course-editor.style.client.css"
 
-export default class WidgetList extends React.Component {
+export default class WidgetListComponent extends React.Component {
     render() {
         return  (
 

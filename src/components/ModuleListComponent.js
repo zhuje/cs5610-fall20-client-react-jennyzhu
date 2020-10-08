@@ -1,10 +1,10 @@
 import React from "react";
-import ModuleListItem from './ModuleListItem';
+import ModuleListItemComponent from './ModuleListItemComponent';
 import ListGroup from 'react-bootstrap/ListGroup';
 import "font-awesome/css/font-awesome.css"
-import LessonTabs from "./LessonTabs";
+import LessonTabsComponent from "./LessonTabsComponent";
 
-export default class ModuleList extends React.Component {
+export default class ModuleListComponent extends React.Component {
     // Render modules dynamically from an array called 'modules'.
     //    Create a constructor containing the array 'modules'
     //     which has state.
@@ -41,7 +41,7 @@ export default class ModuleList extends React.Component {
     renderListOfModules() {
         let modules =
             this.state.modules.map(function(module)
-                 { return <ModuleListItem
+                 { return <ModuleListItemComponent
                                 title = {module.title}
                                 key = {module.id}/>
                  }

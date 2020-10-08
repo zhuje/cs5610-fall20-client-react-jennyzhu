@@ -1,12 +1,12 @@
 import React from "react";
-import CourseTable from "../components/CourseTable";
+import CourseTableComponent from "../components/CourseTableComponent";
 import {BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom'
-import CourseGrid from "../components/CourseGrid";
+import CourseGridComponent from "../components/CourseGridComponent";
 import {findAllCourses, updateCourse, deleteCourse, createCourse} from "../services/CourseService";
 
 
 
-export default class CourseManager extends React.Component{
+export default class CourseManagerContainer extends React.Component{
 
     // We declare what objects we want to pay attention to when that object's state changes.
     // I.e. when the state of the 'course' array changes (when we add or delete courses in the
@@ -128,7 +128,7 @@ export default class CourseManager extends React.Component{
 
                 {
                     this.props.type === "Table" &&
-                    <CourseTable
+                    <CourseTableComponent
                         deleteCourse={this.deleteCourse}
                         addCourse={this.addCourse}
                         editCourse={this.editCourse}
@@ -138,7 +138,7 @@ export default class CourseManager extends React.Component{
                 }
                 {
                     this.props.type === "Grid" &&
-                    <CourseGrid
+                    <CourseGridComponent
                         deleteCourse={this.deleteCourse}
                         addCourse={this.addCourse}
                         editCourse={this.editCourse}

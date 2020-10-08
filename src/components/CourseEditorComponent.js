@@ -1,17 +1,17 @@
 import React from "react";
-import ModuleListItem from './ModuleListItem';
+import ModuleListItemComponent from './ModuleListItemComponent';
 import ListGroup from 'react-bootstrap/ListGroup';
 import "font-awesome/css/font-awesome.css"
-import LessonTabs from "./LessonTabs";
-import ModuleList from "./ModuleList";
-import WidgetList from "./WidgetList";
+import LessonTabsComponent from "./LessonTabsComponent";
+import ModuleListComponent from "./ModuleListComponent";
+import WidgetListComponent from "./WidgetListComponent";
 import "./course-editor.style.client.css"
 
-export default class CourseEditor extends React.Component {
+export default class CourseEditorComponent extends React.Component {
     render() {
         return (
             <div className={"wbdv-course-editor-body"}>
-                {/* CourseEditor Header */}
+                {/* CourseEditorComponent Header */}
                 <div className="container ">
                     <h5 className="wbdv-editor-heading ">
                         <div className="row">
@@ -57,12 +57,12 @@ export default class CourseEditor extends React.Component {
                 <div className="row wbdv-sidebar-widgets-container">
                     <div className="col-4">
                         <h2>Modules</h2>
-                        <ModuleList/>
+                        <ModuleListComponent/>
                     </div>
                     <div className="col-8">
                         <h2>Lessons</h2>
-                        <LessonTabs/>
-                        <WidgetList/>
+                        <LessonTabsComponent/>
+                        <WidgetListComponent/>
                     </div>
                 </div>
 
