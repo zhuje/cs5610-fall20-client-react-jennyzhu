@@ -49,6 +49,15 @@
 .wbdv-topic-pills{
     background-color: ghostwhite;
 }
+.wbdv-nav-link{
+    background-color: #343a40;
+}
+
+/* Lesson Tabs */
+
+.wbdv-lesson-tab-link {
+    background-color: #343a40
+}
 
 /* Header -- Pill Nav  */
 .wbdv-course-editor-body a {
@@ -118,6 +127,7 @@
 }
 
 .wbdv-widget-heading-button-nudge{
+    background-color: darkgrey;
     margin: 2px;
 }
 

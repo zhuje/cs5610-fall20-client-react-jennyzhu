@@ -101,20 +101,6 @@ export default class CourseManagerContainer extends React.Component{
 
             <div>
 
-                {/*{*/}
-                {/*    this.state.editing === true &&*/}
-                {/*    <input*/}
-                {/*        onChange={this.updateTitle}*/}
-                {/*        value={this.state.course.title}/>*/}
-                {/*}*/}
-                {/*{*/}
-                {/*    this.state.editing === false &&*/}
-                {/*    <Link to={`/edit/${this.props.course._id}`}>*/}
-                {/*        <i className="fas fa-file-alt wbdv-button-spacing"></i>*/}
-                {/*        {this.state.course.title}*/}
-                {/*    </Link>*/}
-                {/*}*/}
-
 
                 <div className={"row wbdv-courses-header "}>
                     <div>
