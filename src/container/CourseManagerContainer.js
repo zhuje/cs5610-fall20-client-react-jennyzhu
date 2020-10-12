@@ -7,7 +7,6 @@ import {findAllCourses, updateCourse, deleteCourse, createCourse} from "../servi
 
 
 export default class CourseManagerContainer extends React.Component{
-
     // We declare what objects we want to pay attention to when that object's state changes.
     // I.e. when the state of the 'course' array changes (when we add or delete courses in the
     // array) then we want to RE-render() the array to reflect the latest changes. This is
@@ -62,6 +61,7 @@ export default class CourseManagerContainer extends React.Component{
             .catch(error => {
 
             })
+
     };
 
     addCourse = () => {
@@ -100,7 +100,6 @@ export default class CourseManagerContainer extends React.Component{
         return (
 
             <div>
-
 
                 <div className={"row wbdv-courses-header "}>
                     <div>

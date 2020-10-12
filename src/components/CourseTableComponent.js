@@ -61,6 +61,7 @@ class CourseTableComponent extends React.Component {
                         </th>
                     </tr>
                     </thead>
+                    <tbody >
 
                     {
                         // 1) this.state.course -- means we're applying state to the array 'courses' so
@@ -79,14 +80,17 @@ class CourseTableComponent extends React.Component {
                         // 'this.deleteCourse' which is a reference to our function that will
                         // setState and request the browser to rerender the an 'courses' array
                         // without the deleted course.
-                        this.props.courses.map(course =>
+                        this.props.courses.map((course,key) =>
                                                    <CourseRowComponent
                                                        courseBeingEdited={this.state.courseBeingEdited}
                                                        editCourse={this.props.editCourse}
                                                        deleteCourse={this.props.deleteCourse}
-                                                       course={course}/>
+                                                       course={course}
+                                                       key={course._id}
+                                                   />
                         )
                     }
+                    </tbody>
                 </table>
                 <button
                     onClick={this.props.addCourse} // when the 'Add Course' button is clicked call the 'addCourse' function

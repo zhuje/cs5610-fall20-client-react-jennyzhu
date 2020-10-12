@@ -30,7 +30,7 @@ class CourseGridComponent extends React.Component {
     network request.
      */
     componentDidMount() {
-        console.log("component did mount");
+        console.log("component did mountGrid");
         findAllCourses() // fetches from the remote server all of the 'courses' as a JSON object 'courses' which we will then parse here
             .then(courses => { // then once we receive the JSON object -- store it in the variable 'courses' then manipulate it '=>'
                 this.setState({ // we're going to manipulate the JSON object 'course' by setting the state's attribute 'courses' (in purple)
@@ -85,7 +85,8 @@ class CourseGridComponent extends React.Component {
                         // 'this.deleteCourse' which is a reference to our function that will
                         // setState and request the browser to rerender the an 'courses' array
                         // without the deleted course.
-                        this.props.courses.map(course =>
+
+                        this.props.courses.map((course) =>
                                                    // <Col xs="3">
                                                     <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
                                                    <CourseCardComponent
@@ -93,6 +94,7 @@ class CourseGridComponent extends React.Component {
                                                        editCourse={this.props.editCourse}
                                                        deleteCourse={this.props.deleteCourse}
                                                        course={course}
+                                                       key={course._id}
                                                        />
                                                     {/*// </Col>*/}
                                                     </div>

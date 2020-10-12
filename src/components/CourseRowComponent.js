@@ -42,6 +42,7 @@ export default class CourseRowComponent extends React.Component {
         return(
             <tr className={" wbdv-course-row"}>
                 <td>
+
                     {
                         this.state.editing === true &&
                         <input

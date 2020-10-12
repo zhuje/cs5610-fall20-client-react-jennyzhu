@@ -105,3 +105,14 @@ html, body {
 .wbdv-courses-header{
     margin:10px;
 }
+
+.wbdv-card-wrapper{
+    width: 100%;
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.wbdv-card-wrapper-input{
+    width: 100%;
+    flex-grow: 1;
+}

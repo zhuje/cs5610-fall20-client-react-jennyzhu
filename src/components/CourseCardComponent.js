@@ -43,7 +43,8 @@ class CourseCardComponent extends React.Component {
                                     this.state.editing === true &&
                                     <input
                                         onChange={this.updateTitle}
-                                        value={this.state.course.title}/>
+                                        value={this.state.course.title}
+                                    />
                                 }
                                 {
                                     this.state.editing === false &&
@@ -59,7 +60,7 @@ class CourseCardComponent extends React.Component {
                                      <button
                                         className="btn btn-danger "
                                         onClick={() => this.props.deleteCourse(this.props.course)}>
-                                        Delete
+                                         Delete
                                     </button>
                                      {
                                         this.state.editing &&
